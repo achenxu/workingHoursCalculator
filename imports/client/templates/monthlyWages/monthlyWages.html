@@ -1,0 +1,94 @@
+<template name="monthlyWages">
+
+  <div class="container-fluid">
+
+        <div class="row m-t-sm">
+            <div class="col-md-12">
+                <div class="panel panel-filled">
+
+                    <div class="panel-body">
+
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="media">
+                                  <i class="fa fa-calendar c-accent fa-3x" aria-hidden="true"></i>
+                                    <h3 class="m-t-xs m-b-none">
+                                        Monthly Wage Calculation System
+                                    </h3>
+                                    <small>
+                                        Please select a month and view your employees total earned wage.
+                                    </small>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 m-t-sm">
+                                <h4 class="c-white">
+                                    Select a month
+                                </h4>
+                                <form>
+                                    <select class="form-control" id="monthSelect">
+                                        <option value="">--</option>
+                                        <option value="2">March 2014</option>
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end row -->
+
+        {{#if wageSumList.count}}
+
+
+        <div class="row m-t-md">
+
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="v-timeline vertical-container">
+                          {{#each wageSumList}}
+                          <div class="vertical-timeline-block">
+                              <div class="vertical-timeline-icon">
+                                  <i class="fa fa-user"></i>
+                              </div>
+                              <div class="vertical-timeline-content">
+                                  <div class="p-sm">
+                                      <span class="vertical-date pull-right"> Duration <br/> <small>{{totalDuration totalMinutes}}</small> </span>
+
+                                      <h2>{{name}}</h2>
+                                      <table cellpadding="1" cellspacing="1" class="table">
+                                        <tbody>
+                                          <tr>
+                                              <td class="col-lg-4">Total amount earned</td>
+                                              <td class="c-accent">{{formatAmount amount.total}}</td>
+                                          </tr>
+                                          <tr>
+                                              <td class="col-lg-4">Amount earned due to overtime</td>
+                                              <td class="c-accent">{{formatAmount amount.overtime}}</td>
+                                          </tr>
+                                          <tr>
+                                              <td class="col-lg-4">Amount earned due to evening shifts</td>
+                                              <td class="c-accent">{{formatAmount amount.evening}}</td>
+                                          </tr>
+                                          <tr>
+                                              <td class="col-lg-4">Amount earned due to overtime + evening shifts</td>
+                                              <td class="c-accent">{{formatAmount amount.evening_overtime}}</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                  </div>
+                                  <div class="panel-footer">
+                                      Click to view details
+                                  </div>
+                              </div>
+                          </div>
+                          {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+    </div> <!-- end continer-fluit -->
+</template>

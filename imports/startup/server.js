@@ -18,7 +18,7 @@ Meteor.startup(() => {
       wageHandler( _.rest(res) ); /* _.rest() - skip the 1st row */
   	});
   }
-}); 
+});
 
 
 
@@ -46,7 +46,7 @@ function processDayField(day){
         'total'     :0,
         'evening'   :0,
         'overtime'  :0,
-        'evening+overtime':0
+        'evening_overtime':0
       },
       wage          = {
         'name'      :  day[0],
@@ -82,7 +82,7 @@ function getWageForTheDay(begin, total, date, wage, i){
       wage['overtime'] += 0.25*(3.75+(evening*1.15))*overTime;
     }
     if ( evening && overTime > 1 ){
-      wage['evening+overtime'] += 0.25*(3.75+(evening*1.15))*overTime;
+      wage['evening_overtime'] += 0.25*(3.75+(evening*1.15))*overTime;
     }
 
     return getWageForTheDay(begin.add(15, "minutes"), total, date, wage, i+1);

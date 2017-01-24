@@ -19,7 +19,7 @@ export function insertDayWageAndIncrementSum(wage) {
               'amount.total'            :  amount['total'],
               'amount.evening'          :  amount['evening'],
               'amount.overtime'         :  amount['overtime'],
-              'amount.evening+overtime' :  amount["evening+overtime"],
+              'amount.evening_overtime' :  amount["evening_overtime"],
               'totalMinutes'            :  wage['totalMinutes']
             },
             $setOnInsert : {
