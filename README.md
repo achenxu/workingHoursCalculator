@@ -5,7 +5,25 @@ A database backed, light-wight Meteor web app that calculates wages of employees
 
 ## Details
 
-Coming soon...
+The project uses some handy meteor packages, that could be downloaded from [Here](https://atmospherejs.com)
+```
+check
+less
+twbs:bootstrap
+fortawesome:fontawesome
+natestrauser:animate-css
+mizzao:jquery-ui
+```
+
+Also some npm modules, details of them could be read from [Here](https://www.npmjs.com)
+```
+accounting
+csv
+moment
+```
+
+For understanding the complicated project file structure, kindly have a look at [Example App Structure](https://guide.meteor.com/structure.html#example-app-structure)
+
 
 ## Demo
 
@@ -14,12 +32,12 @@ http://someLink.comingSoon.com
 
 ## Install
 
-In case you don't have meteor installed on your system. Have a look at this [INSTALL METEOR](https://www.meteor.com/install)
+In case you don't have meteor installed on your system. Have a look at this [Istall Meteor](https://www.meteor.com/install)
 
 ```bash
 > git clone https://github.com/fawad1985/workingHoursCalculator.git
 > cd workingHoursCalculator
-> meteor npm Install
+> meteor npm install
 > meteor
 ```
 

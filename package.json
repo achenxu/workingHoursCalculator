@@ -1,5 +1,5 @@
 {
-  "name": "task",
+  "name": "workingHoursCalculator",
   "private": true,
   "scripts": {
     "start": "meteor run"
