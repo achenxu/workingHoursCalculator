@@ -1,3 +1,101 @@
 <template name="wageList">
-  pishi
+  <div class="container-fluid">
+      {{#with wageSum}}
+      <div class="row m-t-sm">
+
+          <div class="col-md-12">
+              <div class="panel panel-filled">
+
+                  <div class="panel-body">
+
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div class="media">
+                                  <h1 class="m-t-sm">
+                                    {{this.name}}
+                                  </h1>
+                                  <p>
+                                    <i class="fa fa-id-badge m-r-sm" aria-hidden="true"></i>&nbsp;&nbsp;{{this.personId}}
+                                  </p>
+                                  <p>
+                                    <i class="fa fa-calendar-o m-r-sm" aria-hidden="true"></i>&nbsp;&nbsp;{{getMonth this.month 'l'}}
+                                  </p>
+
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                              <table class="table small m-t-sm">
+                                <tbody>
+                                  <tr>
+                                    <td><strong class="c-white">{{formatAmount this.amount.total}}</strong> Total amount</td>
+                                  </tr>
+                                  <tr>
+                                    <td><strong class="c-white">{{formatAmount this.amount.overtime}}</strong> Overtime</td>
+                                  </tr>
+                                  <tr>
+                                    <td><strong class="c-white">{{formatAmount this.amount.evening}}</strong> Evenings</td>
+                                  </tr>
+                                  <tr>
+                                    <td><strong class="c-white">{{formatAmount this.amount.evening_overtime}}</strong> Overtime + evenings</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                          </div>
+
+                          <div class="col-md-3 m-t-sm">
+                              <div class="btn-group m-t-sm pull-right">
+                                  <a href="/" class="btn btn-default btn-sm">
+                                    <i class="fa fa-chevron-left"></i> Back
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+      {{/with}}
+
+      {{#if wageList.count}}
+      <div class="row m-t-md">
+        <div class="col-md-12">
+              <div class="panel">
+                  <div class="panel-heading">
+                  </div>
+                  <div class="panel-body">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Check In-Out</th>
+                            <th>Total Hours</th>
+                            <th>Total Amount Earned</th>
+                            <th>Evenings</th>
+                            <th>Overtime</th>
+                            <th>Overtime + Evening</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {{#each wageList}}
+                          <tr class="animated bounceIn">
+                            <td class="c-accent">{{formatDate startTime}} - {{formatDate endTime}}</td>
+                            <td class="c-accent">{{totalDuration totalMinutes}}</td>
+                            <td class="c-accent">{{formatAmount amount.total}}</td>
+                            <td>{{formatAmount amount.evening}}</td>
+                            <td>{{formatAmount amount.overtime}}</td>
+                            <td>{{formatAmount amount.evening_overtime}}</td>
+                          </tr>
+                          {{/each}}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+      {{/if}}
+
+  </div><!-- end continer fluid-->
 </template>

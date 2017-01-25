@@ -4,6 +4,7 @@ import csv        from 'csv';
 import Wages      from '/imports/api/wages';
 
 import '/imports/server/publications';
+import '/imports/server/permissions';
 import { createDate, eveningWorkingHour, overTimeMultiplier } from '/imports/helpers/helpers';
 import { insertDayWageAndIncrementSum } from '/imports/helpers/server/db';
 import Fiber from 'fibers';
@@ -15,7 +16,8 @@ Meteor.startup(() => {
     console.log('No Data in DB - Lets seed...');
     var data = Assets.getText('HourList201403.csv');
     csv.parse(data, function(err, res) {
-      wageHandler( _.rest(res) ); /* _.rest() - skip the 1st row */
+      /* _.rest() - skip the 1st row */
+      wageHandler( _.rest(res) );
   	});
   }
 });

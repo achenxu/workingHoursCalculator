@@ -20,7 +20,6 @@ Meteor.publish('WageSumList', function (month) {
 
 
 Meteor.publish("wageList", function(query){
-  console.log(query);
   check(query, Object);
 
   let   publication =  this;
