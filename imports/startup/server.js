@@ -71,7 +71,7 @@ function processDayField(day){
 }
 
 
-function getWageForTheDay(begin, total, date, wage, i){
+function getWageForTheDay (begin, total, date, wage, i){
   if ( i <= total/15 ){
     let evening     =  eveningWorkingHour(begin),
         overTime    =  overTimeMultiplier(i);

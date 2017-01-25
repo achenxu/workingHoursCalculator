@@ -27,12 +27,12 @@ For understanding the complicated project file structure, kindly have a look at 
 
 ## Demo
 
-http://someLink.comingSoon.com
+http://bit.ly/2khXtRh
 
 
 ## Install
 
-In case you don't have meteor installed on your system. Have a look at this [Istall Meteor](https://www.meteor.com/install)
+In case you don't have meteor installed on your system. Have a look at this [Install Meteor](https://www.meteor.com/install)
 
 ```bash
 > git clone https://github.com/fawad1985/workingHoursCalculator.git
@@ -41,7 +41,7 @@ In case you don't have meteor installed on your system. Have a look at this [Ist
 > meteor
 ```
 
-Now navigate to http://localhost:3000/ on your browser. A bootstrapped client is waiting for you...
+Now navigate to [http://localhost:3000/] on your browser. A bootstrapped client is waiting for you...
 
 
 ## Permissions
