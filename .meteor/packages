@@ -24,3 +24,4 @@ iron:router
 natestrauser:animate-css
 mizzao:jquery-ui
 practicalmeteor:mocha
+practicalmeteor:chai
